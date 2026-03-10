@@ -6,10 +6,9 @@ namespace ECartBulkyWebBooks.Models
     {
         [Key]
         public int CategoryId { get; set; }
-        public required string CategoryName { get; set; }
-        [Required]
-        public required string Description { get; set; }
+        public  string CategoryName { get; set; }
+        
 
-        public required string DisplayOrder { get; set; }
+        public  int DisplayOrder { get; set; }
     }
 }
