@@ -1,0 +1,22 @@
+﻿@model Category
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-primary">Edit Category</h2>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryName" class="control-label"></label>
+        <input asp-for="CategoryName" class="form-control" />
+        <span asp-validation-for="CategoryName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DisplayOrder" class="control-label"></label>
+        <input asp-for="DisplayOrder" class="form-control" />
+        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+    </div>
+    <div class="form-group pt-2">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>
