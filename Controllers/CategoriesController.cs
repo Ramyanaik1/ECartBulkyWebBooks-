@@ -2,6 +2,7 @@
 using ECartBulkyWebBooks.Data;
 using ECartBulkyWebBooks.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
 
 namespace ECartBulkyWebBooks.Controllers
@@ -25,15 +26,16 @@ namespace ECartBulkyWebBooks.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Category category)
+        public IActionResult Create(Category obj)
         {
-            if (ModelState.IsValid)
-            {
-                _dbContext.Categories.Add(category);
+            
+                _dbContext.Categories.Add(obj);
                 _dbContext.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(category);
+
+            TempData["success"] = "Category created successfully";
+
+            return RedirectToAction("Index");
+           
         }
 
         public IActionResult Edit(int? id)
@@ -59,6 +61,10 @@ namespace ECartBulkyWebBooks.Controllers
             {
                 _dbContext.Categories.Update(obj);
                 _dbContext.SaveChanges();
+
+
+                TempData["success"] = "Category updated successfully";
+
                 return RedirectToAction("Index");
             }
 
@@ -100,7 +106,13 @@ namespace ECartBulkyWebBooks.Controllers
             _dbContext.Categories.Remove(obj);
             _dbContext.SaveChanges();
 
+
+            TempData["success"] = "Category deleted successfully";
+
+
             return RedirectToAction("Index");
         }
+
+        
     }
 }
