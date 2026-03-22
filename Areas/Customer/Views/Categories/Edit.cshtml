@@ -1,0 +1,27 @@
+﻿@model ECartBulkyWebBooks.Models.Category
+
+<<div>
+	<form method="post">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 class="text-primary">Edit Catagory </h2>
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="Name" class="control-label>"></label>
+			<input asp-for="Name" class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="DisplayOrder" class="control-label>"></label>
+			<input asp-for="DisplayOrder" class="form-control" />
+			<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+
+		</div>
+		<div class="form-group pt-2">
+			<input type="submit" value="Update" class="btn btn-primary" />
+		</div>
+
+	</form>
+
+</div>

@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../BulkyWeb.Models/BulkyWeb.Models.csproj" Id="e5fd0093-8a30-4e68-95e2-fb28921d456e" />
-  <Project Path="../BulkyWeb.Utilities/BulkyWeb.Utilities.csproj" Id="cfb4e78f-2425-4a4f-bd21-10278de47a8b" />
-  <Project Path="../BulkyWebData/BulkyWeb.Data.csproj" Id="28e48e25-9a17-48dd-9683-24e3474791d1" />
+  <Project Path="../BulkyWeb.Models/ECartBulkyWebBooks.Models.csproj" Id="e5fd0093-8a30-4e68-95e2-fb28921d456e" />
+  <Project Path="../BulkyWeb.Utilities/ECartBulkyWebBooks.Utilities.csproj" Id="cfb4e78f-2425-4a4f-bd21-10278de47a8b" />
+  <Project Path="../BulkyWebData/ECartBulkyWebBooks.Data.csproj" Id="28e48e25-9a17-48dd-9683-24e3474791d1" />
   <Project Path="ECartBulkyWebBooks.csproj" />
 </Solution>

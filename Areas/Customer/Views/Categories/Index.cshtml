@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ECartBulkyWebBooks.Models.Category>
+
+<div class="container">
+    <div class="row pt-4">
+        <div>
+            <h2 class="text-primary">Category List</h2>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Display Order</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td> <!-- ✅ FIX -->
+                    <td>@item.Name</td> <!-- ✅ FIX -->
+                    <td>@item.DisplayOrder</td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "Categories", new { id = item.Id })"
+                               class="btn btn-success">
+                            Edit
+                        </a>
+
+                        <form asp-action="Delete"
+                              asp-controller="Categories"
+                              asp-route-id="@item.Id"
+                              method="post"
+                              class="d-inline">
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="col-6 text-end">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+        Create New Category
+    </button>
+</div>
+
+<!-- CREATE MODAL -->
+<div class="modal fade" id="categoryModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Add Category</h5>
+            </div>
+
+            <div class="modal-body">
+                <form method="post" asp-controller="Categories" asp-action="Create">
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="Name" /> <!-- ✅ FIX -->
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Display Order</label>
+                        <input type="number" class="form-control" name="DisplayOrder" />
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

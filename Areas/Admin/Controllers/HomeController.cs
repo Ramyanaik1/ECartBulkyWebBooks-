@@ -1,9 +1,10 @@
-using ECartBulkyWebBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using ECartBulkyWebBooks.Models;
 
-namespace ECartBulkyWebBooks.Controllers
+namespace ECartBulkyWebBooks.Area.Admin.Controllers
 {
+    [Area("Admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()

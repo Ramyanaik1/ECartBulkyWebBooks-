@@ -1,0 +1,26 @@
+﻿@using ECartBulkyWebBooks.Areas.Admin
+@using ECartBulkyWebBooks.Models
+@model ECartBulkyWebBooks.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will show detailed error information.
+</p>
+
+<p>
+    <strong>Do not enable Development mode in production.</strong>
+</p>
